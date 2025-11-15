@@ -3,7 +3,10 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private Transform player;
+
+    [Header("Offsets")]
     [SerializeField] private float height = 10;
+    [SerializeField] private float offset = 0;
 
     void Update()
     {
@@ -14,7 +17,11 @@ public class FollowPlayer : MonoBehaviour
     {
         if (player)
         {
-            Vector3 eagleEyePosition = new Vector3(player.position.x, player.position.y + height, player.position.z);
+            Vector3 eagleEyePosition = new Vector3(
+                player.position.x + offset,
+                player.position.y + height,
+                player.position.z + offset
+                );
             transform.position = eagleEyePosition;
         }
         else

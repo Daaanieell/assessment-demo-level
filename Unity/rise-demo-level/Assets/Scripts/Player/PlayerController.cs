@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private Vector2 movementVector2;
     private Vector3 forwardMovement;
+    private Vector3 sidewaysMovement;
     private Vector3 mousePosition;
 
     [SerializeField] private float speed = 10;
@@ -33,8 +34,10 @@ public class PlayerController : MonoBehaviour
     {
         movementVector2 = value.Get<Vector2>();
         forwardMovement = new Vector3(0, 0, movementVector2.y);
+        sidewaysMovement = new Vector3(movementVector2.x, 0, 0);
     }
 
+    //TODO: change this to make movement not based on mouse position!
     void HandlePlayerMovement(float speed)
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour
         Vector3 euler = newRot.eulerAngles;
         transform.rotation = Quaternion.Euler(0, euler.y, 0);
 
-        Vector3 movement = transform.forward * forwardMovement.z * speed * Time.deltaTime;
+        Vector3 movement = transform.right * sidewaysMovement.x * speed * Time.deltaTime + transform.forward * forwardMovement.z * speed * Time.deltaTime;
         characterController.Move(movement);
     }
 }
