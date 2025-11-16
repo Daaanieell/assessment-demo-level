@@ -1,3 +1,4 @@
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Quaternion = UnityEngine.Quaternion;
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController characterController;
     private Vector2 movementVector2;
+
+    private Vector3 movementVector3;
     private Vector3 forwardMovement;
     private Vector3 sidewaysMovement;
     private Vector3 mousePosition;
@@ -27,12 +30,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        animationStateController.HandleIsRunning(forwardMovement);
+        animationStateController.HandleIsRunning(movementVector3);
     }
 
     void OnMove(InputValue value)
     {
         movementVector2 = value.Get<Vector2>();
+        movementVector3 = new Vector3(movementVector2.x, 0, movementVector2.y);
+
         forwardMovement = new Vector3(0, 0, movementVector2.y);
         sidewaysMovement = new Vector3(movementVector2.x, 0, 0);
     }
