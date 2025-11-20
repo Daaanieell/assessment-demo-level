@@ -1,12 +1,14 @@
-# PR template
+# Title
 
-this is pr template
+Closes: [link]()
 
-## Check this
+## Description
 
-check ur code pls
+> the pr maker needs to add description here
 
 ## Requirements
 
-- [] works
-- [] is made by you
+> this part needs to be checked of by the pr creator
+
+- [ ] Folders are done in Folder By Feature
+- [ ] Filenames do not contain spaces
