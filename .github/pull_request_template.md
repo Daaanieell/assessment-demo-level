@@ -1,12 +1,22 @@
-# PR template
+# Title
 
-this is pr template
+Closes: [link]()
 
-## Check this
+## Description
 
-check ur code pls
+> Add a description of your changes/additions
+
+**Changes:**
+
+-
+
+**Additions:**
+
+-
 
 ## Requirements
 
-- [] works
-- [] is made by you
+> Check if your code is following these requirements
+
+- [ ] Folders are done in 'folder by feature'
+- [ ] Filenames do not contain spaces
