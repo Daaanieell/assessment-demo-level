@@ -43,7 +43,7 @@ Material:
     - _Normal_Strength: 2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Wave_Size: 10
+    - _Wave_Size: 20
     - _Wave_Speed: 0.1
     m_Colors:
     - _Color: {r: 0.5707547, g: 0.9196895, b: 1, a: 0}
